@@ -1,207 +1,207 @@
 <template>
-<div class="nav-container">
-  <div class="nav-curve"></div>    
-    <img src="../assets/Logo.svg" alt="logo">
-    <div class="bottom-left-quarter">
-    <router-link to="about" class='tab tab_about' href=#><p>About</p></router-link>
-    <router-link to="about" class='tab tab_about' href=#><p>About</p></router-link>
-    </div>
-    <div class="top-right-quarter">
-    <router-link to="contact" class='tab tab_contact' href=#><p>Contact</p></router-link>
-    <router-link to="projects" class='tab tab_projects' href=#><p>Projects</p></router-link>
-    </div>
-    <div class="bottom-right-quarter">
-    <div class="logo-links">
-    <div class="logo-container">
-      <div class="logo">
-        <a href="https://github.com/Archf13nd" target="_blank"><img to="#" class='logo-link logo-link--github' src="../assets/Github.svg" alt="Github link"></a>
-        <div class="logo-backdrop logo-backdrop--front logo-backdrop--white"></div>
+  <div class="nav-container">
+    <div class="nav-grid">
+      <div class="square">
+        <ul class="square-grid nav nav-pills nav-pill-circle">
+          <li class="nav-item circle-item">
+            <a
+              class="nav-link circle-link"
+              href="https://www.linkedin.com/in/alastair-parkyns-8a683a201/"
+              ><span class="logo linked-in"></span
+            ></a>
+          </li>
+          <li class="nav-item circle-item">
+            <a class="nav-link circle-link" href="https://github.com/Archf13nd"
+              ><span class="logo github"></span
+            ></a>
+          </li>
+          <li class="nav-item circle-item">
+            <a class="nav-link circle-link" href="#"></a>
+          </li>
+          <li class="nav-item circle-item">
+            <a class="nav-link circle-link" href="#"></a>
+          </li>
+        </ul>
       </div>
-        <div class="logo-backdrop logo-backdrop--back logo-backdrop--black"></div>
-    </div>
-    <div class="logo-container">
-      <div class="logo">
-        <a href="https://www.linkedin.com/in/alastair-parkyns-8a683a201/" target="_blank"><img class='logo-link' src="../assets/LinkedIn.svg" alt="LinkedIn link"></a>
-        <div class="logo-backdrop logo-backdrop--front logo-backdrop--white"></div>
+      <div class="square">
+        <ul class="nav nav-pills">
+          <li class="nav-item page-tab-item">
+            <router-link
+              to="contact"
+              active-class="active"
+              class="page-tab-link nav-link"
+              >Hire Me</router-link
+            >
+          </li>
+          <li class="nav-item page-tab-item">
+            <router-link
+              to="projects"
+              active-class="active"
+              class="page-tab-link nav-link"
+              >Projects</router-link
+            >
+          </li>
+        </ul>
       </div>
-        <div class="logo-backdrop logo-backdrop--back logo-backdrop--black"></div>
-    </div>
-    <div class="logo-container">
-      <div class="logo">
-        <a href="https://www.linkedin.com/in/alastair-parkyns-8a683a201/" target="_blank"><img class='logo-link' src="../assets/LinkedIn.svg" alt="LinkedIn link"></a>
-        <div class="logo-backdrop logo-backdrop--front logo-backdrop--white"></div>
+      <div class="square">
+        <ul class="nav nav-pills">
+          <li class="nav-item page-tab-item">
+            <router-link
+              to="skills"
+              active-class="active"
+              class="page-tab-link nav-link"
+              >Skills</router-link
+            >
+          </li>
+          <li class="nav-item page-tab-item">
+            <router-link
+              to="about"
+              active-class="active"
+              class="page-tab-link nav-link"
+              >About me</router-link
+            >
+          </li>
+        </ul>
       </div>
-        <div class="logo-backdrop logo-backdrop--back logo-backdrop--black"></div>
     </div>
-    </div>
-    </div>
-</div>
+  </div>
 </template>
 
 <script>
 // import logo from '../assets/Logo.svg'
-export default {
-  
-}
+export default {};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.nav-container {
-position: relative;
-width: 160px;
-height: 160px;
-display: grid;
-grid-template: 1fr 1fr / 1fr 1fr;
-gap: 8px 8px;
-// background: rgb(39, 247, 12);
-margin: 16px;
-// align-items: center;
-// justify-content: center;
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+
+
+.linked-in {
+  background: url("../assets/LinkedIn.svg");
 }
 
-.nav-curve {
-  position: absolute;
-  top: -220px;
-  left: -220px;
-  width: 440px;
-  height: 440px;
-  background: radial-gradient(circle, #ffffff 0%, rgb(248, 248, 248) 68%, #2c2b2b 70%, #5e5f5e 100%);
-  clip-path: circle(50% at 50% 50%);
-  // border: 2px solid black;
-  z-index: -100;
+.github {
+  background: url("../assets/GitHub64.png");
 }
-
 
 .logo {
-  position: relative;
-
-
-  &:hover {
-    transform: translateY(-.5px)
-  }
-  
-  &:active {
-    transition: transform .2s;
-    transform: translateY(3px) translateX(0px);
-  }
-}
-
-.logo-link {
-  width: 32px;
-  height: 32px;
-}
-
-.logo-links {
-  width: 80px;
-  height: 80px;
-  display: grid;
-  grid-template: 1fr 1fr / 1fr 1fr;
-  gap: 8px 8px;
-  align-items: center;
-  justify-items: center;
-
-}
-
-.logo-backdrop {
   display: inline-block;
-  height: 32px;
-  width: 32px;
+  background-size: cover;
+  background-repeat: none;
+  width: 89%;
+  height: 89%;
+}
+
+ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+a {
+  color: #55de7b;
+}
+
+a:active {
+  color: var(--active-text);
+  background-color: var(--active);
+  border-color: var(--border);
+  box-shadow: inset 2px 2px 5px var(--shadow),
+    inset -3px -3px 7px var(--shadow-light);
+}
+
+.nav {
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.nav-container {
+  position: relative;
+  display: block;
+  max-width: 16.66vw;
+  height: 16.66vw;
+  max-width: 320px;
+  height: 320px;
+  background: url("../assets/Background.svg");
+  background-size: cover;
+  filter: drop-shadow(4px 4px 4px #3c3942);
+  @media (max-width: 1300px) {
+   display: none;
+ }
+}
+
+
+
+.nav-grid {
   position: absolute;
-  top: 0;
-  left: 0;
-  clip-path: circle(50% at 50% 50%);
-  z-index: -10;
-
-  &--front {
-    top: -1px;
-    z-index: -5;
-  }
-
-  &--back {
-    transform: translateY(3px) translateX(0px);
-  }
- 
-  &--white {
-    background: rgb(255, 255, 255);
-  }
-
-  &--black {
-    background: rgb(112, 116, 111);
-  }
-
+  top: 5%;
+  left: 5%;
+  width: 92.5%;
+  height: 92.5%;
+  background: rgba(0, 0, 0, 0); // Production
+  display: grid;
+  grid-template: 48.65% 48.65% / 48.65% 48.65%;
+  gap: 2.7%;
+  color: #55de7b;
+  align-items: center;
+  justify-content: center;
 }
 
-.logo-container {
+.nav-item {
   position: relative;
-
-  & > .logo-backdrops {
-    position: absolute;
-    top: 0;
-    z-index: -10;
-
-  }
-
 }
 
-.tab {
-  // box-sizing: border-box;
-  display: inline-block;
-  width: 80px;
-  height: 36px;
-  box-sizing: border-box;
-  border: 1px solid #000;
-  border-radius: 15px;
-  background: rgb(32, 33, 34);
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.712);
-  text-decoration: none;
-  color: white;
-  text-align: center;
+.circle-item {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-item > .circle-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.page-tab-item {
+  width: 77.7%;
+  height: 33%;
+  margin-bottom: 11%;
+}
+
+.nav-item > .page-tab-link {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-family: Righteous, sans-serif;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all .1s ease-out;
-
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.712);
-
-    }
-
-    &:active {
-      transform: translateY(0px);
-      box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.712);
-
-    }
-
-    &_about {
-      margin-bottom: 8px;
-      // &:last-child {
-      //   margin-top: 16px;
-      // }
-    }
-  &_contact {
-    margin-bottom: 8px;
-  }
-  &_projects {
-    // margin-top: 16px;
-  }
+  border-radius: 14px;
 }
 
-.bottom-left-quarter {
-  grid-row: 2 / 3;
-  grid-column: 1 / 2;
-  align-self: end;
+.square {
+  // Production
+  background: rgba(32, 104, 29, 0);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-.bottom-right-quarter {
-
+.square-grid {
+  display: grid;
+  width: 77.7%;
+  height: 77.7%;
+  grid-template: 43% 43% / 43% 43%;
+  grid-gap: 14.28%;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
-
-.top-right-quarter {
-
-}
-
-
 </style>

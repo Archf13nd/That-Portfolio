@@ -1,19 +1,21 @@
 <template>
   <div id="app">
     <the-nav></the-nav>
-    <router-view/>
+    <the-pill />
+    <router-view />
   </div>
 </template>
 
 <script>
-import theNav from './components/Nav.vue'
+import theNav from "./components/Nav.vue";
+import thePill from "./components/DarkMode.vue";
 
 export default {
   components: {
-    theNav
+    theNav,
+    thePill
   }
-  
-}
+};
 </script>
 
 <style lang="scss">
@@ -22,8 +24,7 @@ export default {
   --secondary-color-base: #000000;
 }
 
-
-html, 
+html,
 body,
 ::before,
 ::after {
@@ -35,9 +36,20 @@ html {
   box-sizing: border-box;
 }
 
+#app {
+  min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Helvetica, sans-serif;
-  box-sizing: border-box;
-
+  background: #141414;
 }
 </style>
