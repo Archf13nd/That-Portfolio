@@ -1,11 +1,12 @@
 <template>
   <div class="the-container shadow-soft">
-    <form name='contact' netlify>
+    <form name="contact-form" method="POST" data-netlify='true' @submit="submitForm">
+      <input type="hidden" name="form-name" value="contact-form" />
       <div class="form-group" :class="{ invalid: nameInvalid }">
         <label for="first-name">First Name:</label>
         <input
           type="text"
-          name='name'
+          name="name"
           class="form-control"
           v-model.trim="name"
           @blur="isValid('name')"
@@ -17,7 +18,7 @@
         <label for="email">Your Email:</label>
         <input
           type="email"
-          name='email'
+          name="email"
           class="form-control"
           v-model.trim="email"
           @blur="
@@ -33,6 +34,7 @@
         <label for="message">Send me a message!</label>
         <textarea
           class="form-control"
+          name='message'
           v-model.trim="theForm"
           @blur="
             isValid('form');
