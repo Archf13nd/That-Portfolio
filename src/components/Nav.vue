@@ -7,11 +7,15 @@
             <a
               class="nav-link circle-link"
               href="https://www.linkedin.com/in/alastair-parkyns-8a683a201/"
+              target="_blank"
               ><span class="logo linked-in"></span
             ></a>
           </li>
           <li class="nav-item circle-item">
-            <a class="nav-link circle-link" href="https://github.com/Archf13nd"
+            <a
+              class="nav-link circle-link"
+              href="https://github.com/Archf13nd"
+              target="_blank"
               ><span class="logo github"></span
             ></a>
           </li>
@@ -76,8 +80,6 @@ export default {};
 <style scoped lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 
-
-
 .linked-in {
   background: url("../assets/LinkedIn.svg");
 }
@@ -129,11 +131,9 @@ a:active {
   background-size: cover;
   filter: drop-shadow(4px 4px 4px #3c3942);
   @media (max-width: 1300px) {
-   display: none;
- }
+    display: none;
+  }
 }
-
-
 
 .nav-grid {
   position: absolute;

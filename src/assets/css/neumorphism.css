@@ -23,7 +23,7 @@
     --white: #ECF0F3;
     --gray: #93a5be;
     --gray-dark: #525480;
-    --primary: #141414;
+    --primary: #4D475A;
     --secondary: #4d515f;
     --success: #18634B;
     --info: #0056B3;
@@ -6500,7 +6500,7 @@ input[type="button"].btn-block {
 .card {
     position: relative;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     min-width: 0;
     word-wrap: break-word;
     background-color: var(--active);
