@@ -30,7 +30,7 @@
         />
       </div>
 
-      <div class="form-group" :class="{ invalid: formInvalid }">
+      <div class="form-group" :class="{invalid: formInvalid }">
         <label for="message">Send me a message!</label>
         <textarea
           class="form-control"
