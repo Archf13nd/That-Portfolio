@@ -123,6 +123,7 @@ a:active {
 .nav-container {
   position: relative;
   display: block;
+  z-index: 666;
   max-width: 16.66vw;
   height: 16.66vw;
   max-width: 320px;
