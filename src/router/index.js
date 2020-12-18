@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import About from "../components/About.vue";
 import Contact from "../components/Contact.vue";
 import Projects from "../components/Projects.vue";
+import Skills from "../components/Skills.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/projects",
     name: "Projects",
     component: Projects
+  },
+  {
+    path: "/skills",
+    name: "Skills",
+    component: Skills
   }
 ];
 
