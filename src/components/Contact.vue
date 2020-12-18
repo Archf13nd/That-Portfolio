@@ -1,7 +1,9 @@
 <template>
+<div class="screen-container">
   <div class="the-container shadow-soft">
     <form name="contact-form" method="POST" data-netlify='true' @submit="submitForm">
       <input type="hidden" name="form-name" value="contact-form" />
+      <div class="bars">
       <div class="form-group" :class="{ invalid: nameInvalid }">
         <label for="first-name">First Name:</label>
         <input
@@ -29,6 +31,7 @@
           id="email"
         />
       </div>
+      </div>
 
       <div class="form-group" :class="{invalid: formInvalid }">
         <label for="message">Send me a message!</label>
@@ -42,7 +45,7 @@
           "
           required
           id="message"
-          rows="12"
+          rows="7"
         ></textarea>
       </div>
       <div class="form-group">
@@ -59,6 +62,7 @@
       </div>
     </form>
   </div>
+</div>
 </template>
 
 <script>
@@ -94,7 +98,27 @@ export default {
 <style lang="scss" scoped>
 form {
   width: 80%;
+  height: 100%;
   margin: 5% auto;
+}
+
+textarea,
+input {
+  color: #57bd68;
+  box-shadow: var(--box-shadow-offset) var(--box-shadow-offset)
+      var(--box-shadow-blur) var(--shadow),
+    var(--box-shadow-offset-invert) var(--box-shadow-offset-invert)
+      var(--box-shadow-blur) var(--shadow-light);
+
+  &:focus {
+    color: #4fb460;
+    box-shadow: inset 2px 2px 5px var(--shadow),
+      inset -3px -3px 7px var(--shadow-light);
+  }
+}
+
+textarea {
+  min-height: 270px;
 }
 
 .invalid {
@@ -129,32 +153,35 @@ input:-webkit-autofill:active {
   transition: all 5000s ease-in-out 0s;
 }
 
-.the-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: var(--primary);
-  border-radius: 14px;
-  transform: translate(-50%, -50%);
-  width: 25vw;
-  min-width: 300px;
-  height: 70vh;
-  min-height: 640px;
-  color: #97e7a4;
+.btn {
+  position: relative;
+  bottom: 0;
 }
 
-textarea,
-input {
-  color: #57bd68;
-  box-shadow: var(--box-shadow-offset) var(--box-shadow-offset)
-      var(--box-shadow-blur) var(--shadow),
-    var(--box-shadow-offset-invert) var(--box-shadow-offset-invert)
-      var(--box-shadow-blur) var(--shadow-light);
+.screen-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  &:focus {
-    color: #4fb460;
-    box-shadow: inset 2px 2px 5px var(--shadow),
-      inset -3px -3px 7px var(--shadow-light);
-  }
+.the-container {
+  position: absolute;
+  margin: 5% 0 5% 0;
+  background: var(--primary);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 480px;
+  min-width: 300px;
+  height: 100%;
+  max-height: 600px;
+  min-height: 500px;
+  color: #97e7a4;
+  justify-content: space-between;
+  flex-basis: auto;
 }
 </style>
