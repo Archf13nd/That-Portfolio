@@ -1,4 +1,5 @@
 <template>
+<div class="screen-container">
   <div class="the-container">
     <div class="text--intro-container">
       <div class="text text--intro">
@@ -7,6 +8,7 @@
         with, is extremely satisfying to me.
       </div>
     </div>
+    <div class='spacer'></div>
 
     <img
       class="my-photo shadow-soft"
@@ -28,108 +30,83 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <style lang="scss" scoped>
-.the-container {
+
+.screen-container {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid rgba(0, 128, 0, 0);
-  width: 60vw;
-  min-height: 70vh;
-  @media (max-width: 1300px) {
-    width: 70vw;
-    min-height: 70vh;
-  }
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.the-container {
+  width: 60%;
+  height: 60%;
+  margin: 5% 0 5% 0;
+  justify-content: center;
 
   display: grid;
-  grid-template: 30% 70% / minmax(50%, 80%) minmax(20%, 50%);
+  grid-template: minmax(10px, 1fr) / repeat(auto-fill, minmax(300px, 600px));
+}
 
-  @media (max-width: 1050px) {
-    grid-template: 1fr 600px 2fr / 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 80%;
-    margin: 0 auto;
-    height: 100%;
-    transform: translate(0%, 0%);
+.spacer {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0);
+  width: 100%;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+
+  @media screen and (max-width: 1333px) {
+    display: none;
   }
 }
 
 .my-photo {
-  position: relative;
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  max-height: 500px;
-  min-height: 300px;
-  border-radius: 10px;
-  border: 2px solid black;
+  height: 400px;
   justify-self: end;
-  margin: 0% 10% 0 0;
-  @media (max-width: 1050px) {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    justify-self: center;
-    align-self: center;
-    margin: 0% 0% 0 0;
-  }
+  margin: 10% 10% 0 0;
+
+  @media screen and (max-width: 1333px) {
+  justify-self: center;
+  margin: 10% 0 10% 0;
+  } 
+  
 }
 
 .text {
-  color: #97e7a4;
-  font-size: 120%;
+  color: #55de7b;
+  font-size: 18px;
 
-  &--intro-container {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template: 100% / minmax(300px, 700px) 1fr;
-    @media (max-width: 1050px) {
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
-      grid-template: 100% / 100%;
-    }
+&--intro-container {
+  display: flex;
+  padding-right: 10%;
+  padding-left: 10%;
+  text-align: end;
 
-    align-items: end;
-  }
+  @media screen and (max-width: 1333px) {
+  text-align: center;
+  } 
+}
 
-  &--intro {
-    width: 100%;
-    text-align: end;
-    padding-right: 10%;
-    padding-bottom: 10%;
-    @media (max-width: 1050px) {
-      text-align: center;
-      justify-self: center;
-    }
-  }
+&__main--container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
-  &__main--container {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+&__main--2 {
+  margin-top: 5%;
+}
 
-    @media (max-width: 1360px) {
-      margin-top: 5%;
-      grid-row: 1 / 3;
-    }
-
-    @media (max-width: 1050px) {
-      grid-column: 1 / 2;
-      grid-row: 3 / 4;
-    }
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  &__main--1 {
-    margin-bottom: 10%;
-  }
-  &__main--2 {
-  }
 }
 </style>
