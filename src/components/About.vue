@@ -32,6 +32,5 @@
 
 <style lang="scss" scoped>
 .the-container {
-  
-  }
+}
 </style>
