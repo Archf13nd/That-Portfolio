@@ -56,6 +56,7 @@ export default {
   top: 0px;
   height: 100%;
   clip-path: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
   background: radial-gradient(circle, #ffffff, #5e5f5e);
   z-index: 1;
 }
@@ -67,6 +68,7 @@ export default {
   width: 8px;
   height: 8px;
   clip-path: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
   background: #fff;
 }
 

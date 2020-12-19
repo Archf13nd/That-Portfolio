@@ -1,68 +1,73 @@
 <template>
-<div class="screen-container">
-  <div class="the-container shadow-soft">
-    <form name="contact-form" method="POST" data-netlify='true' @submit="submitForm">
-      <input type="hidden" name="form-name" value="contact-form" />
-      <div class="bars">
-      <div class="form-group" :class="{ invalid: nameInvalid }">
-        <label for="first-name">First Name:</label>
-        <input
-          type="text"
-          name="name"
-          class="form-control"
-          v-model.trim="name"
-          @blur="isValid('name')"
-          required
-          id="first-name"
-        />
-      </div>
-      <div class="form-group" :class="{ invalid: emailInvalid }">
-        <label for="email">Your Email:</label>
-        <input
-          type="email"
-          name="email"
-          class="form-control"
-          v-model.trim="email"
-          @blur="
-            isValid('email');
-            isValid('name');
-          "
-          required
-          id="email"
-        />
-      </div>
-      </div>
+  <div class="screen-container">
+    <div class="the-container shadow-soft">
+      <form
+        name="contact-form"
+        method="POST"
+        data-netlify="true"
+        @submit="submitForm"
+      >
+        <input type="hidden" name="form-name" value="contact-form" />
+        <div class="bars">
+          <div class="form-group" :class="{ invalid: nameInvalid }">
+            <label for="first-name">First Name:</label>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              v-model.trim="name"
+              @blur="isValid('name')"
+              required
+              id="first-name"
+            />
+          </div>
+          <div class="form-group" :class="{ invalid: emailInvalid }">
+            <label for="email">Your Email:</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              v-model.trim="email"
+              @blur="
+                isValid('email');
+                isValid('name');
+              "
+              required
+              id="email"
+            />
+          </div>
+        </div>
 
-      <div class="form-group" :class="{invalid: formInvalid }">
-        <label for="message">Send me a message!</label>
-        <textarea
-          class="form-control"
-          name='message'
-          v-model.trim="theForm"
-          @blur="
-            isValid('form');
-            isValid('email');
-          "
-          required
-          id="message"
-          rows="7"
-        ></textarea>
-      </div>
-      <div class="form-group">
-        <input
-          class="btn btn-primary submit-btn"
-          @click="
-            isValid('name');
-            isValid('email');
-            isValid('form');
-          "
-          type="submit"
-          value="Send"
-        />
-      </div>
-    </form>
+        <div class="form-group message-box" :class="{ invalid: formInvalid }">
+          <label for="message">Send me a message!</label>
+          <textarea
+            class="form-control"
+            name="message"
+            v-model.trim="theForm"
+            @blur="
+              isValid('form');
+              isValid('email');
+            "
+            required
+            id="message"
+            rows="7"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <input
+            class="btn btn-primary submit-btn"
+            @click="
+              isValid('name');
+              isValid('email');
+              isValid('form');
+            "
+            type="submit"
+            value="Send"
+          />
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -118,7 +123,7 @@ input {
 }
 
 textarea {
-  min-height: 270px;
+  min-height: 320px;
 }
 
 .invalid {
@@ -171,6 +176,7 @@ input:-webkit-autofill:active {
 
 .the-container {
   position: absolute;
+  top: 0;
   margin: 5% 0 5% 0;
   background: var(--primary);
   border-radius: 14px;
@@ -178,10 +184,14 @@ input:-webkit-autofill:active {
   max-width: 480px;
   min-width: 300px;
   height: 100%;
-  max-height: 600px;
-  min-height: 500px;
+  max-height: 650px;
+  min-height: 600px;
   color: #97e7a4;
   justify-content: space-between;
   flex-basis: auto;
+
+  @media screen and (max-width: 600px) {
+    margin-top: 20%;
+  }
 }
 </style>
