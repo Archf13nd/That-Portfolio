@@ -1,71 +1,76 @@
 <template>
-  <div class="nav-container">
-    <div class="nav-grid">
-      <div class="square">
-        <ul class="square-grid nav nav-pills nav-pill-circle">
-          <li class="nav-item circle-item">
-            <a
-              class="nav-link circle-link"
-              href="https://www.linkedin.com/in/alastair-parkyns-8a683a201/"
-              target="_blank"
-              ><span class="logo linked-in"></span
-            ></a>
-          </li>
-          <li class="nav-item circle-item">
-            <a
-              class="nav-link circle-link"
-              href="https://github.com/Archf13nd"
-              target="_blank"
-              ><span class="logo github"></span
-            ></a>
-          </li>
-          <li class="nav-item circle-item">
-            <a class="nav-link circle-link" href="#"></a>
-          </li>
-          <li class="nav-item circle-item">
-            <a class="nav-link circle-link" href="#"></a>
-          </li>
-        </ul>
-      </div>
-      <div class="square">
-        <ul class="nav nav-pills">
-          <li class="nav-item page-tab-item">
-            <router-link
-              to="contact"
-              active-class="active"
-              class="page-tab-link nav-link"
-              >Hire Me</router-link
-            >
-          </li>
-          <li class="nav-item page-tab-item">
-            <router-link
-              to="projects"
-              active-class="active"
-              class="page-tab-link nav-link"
-              >Projects</router-link
-            >
-          </li>
-        </ul>
-      </div>
-      <div class="square">
-        <ul class="nav nav-pills">
-          <li class="nav-item page-tab-item">
-            <router-link
-              to="skills"
-              active-class="active"
-              class="page-tab-link nav-link"
-              >Skills</router-link
-            >
-          </li>
-          <li class="nav-item page-tab-item">
-            <router-link
-              to="about"
-              active-class="active"
-              class="page-tab-link nav-link"
-              >About me</router-link
-            >
-          </li>
-        </ul>
+  <div class="the-nav">
+    <input class="nav-toggle" id="nav-toggle" type="checkbox" />
+    <label
+      class="nav-toggle-circle rounded-circle shadow-soft"
+      for="nav-toggle"
+    ></label>
+    <div class="nav-container" :class="{ hideNav: 'hide-nav' }">
+      <div class="nav-grid">
+        <div class="square">
+          <ul class="square-grid nav nav-pills nav-pill-circle">
+            <li></li>
+            <li class="nav-item circle-item">
+              <a
+                class="nav-link circle-link"
+                href="https://www.linkedin.com/in/alastair-parkyns-8a683a201/"
+                target="_blank"
+                ><span class="logo linked-in"></span
+              ></a>
+            </li>
+            <li class="nav-item circle-item">
+              <a
+                class="nav-link circle-link"
+                href="https://github.com/Archf13nd"
+                target="_blank"
+                ><span class="logo github"></span
+              ></a>
+            </li>
+            <li class="nav-item circle-item">
+              <a class="nav-link circle-link" href="#"></a>
+            </li>
+          </ul>
+        </div>
+        <div class="square">
+          <ul class="nav nav-pills">
+            <li class="nav-item page-tab-item">
+              <router-link
+                to="contact"
+                active-class="active"
+                class="page-tab-link nav-link"
+                >Hire Me</router-link
+              >
+            </li>
+            <li class="nav-item page-tab-item">
+              <router-link
+                to="projects"
+                active-class="active"
+                class="page-tab-link nav-link"
+                >Projects</router-link
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="square">
+          <ul class="nav nav-pills">
+            <li class="nav-item page-tab-item">
+              <router-link
+                to="skills"
+                active-class="active"
+                class="page-tab-link nav-link"
+                >Skills</router-link
+              >
+            </li>
+            <li class="nav-item page-tab-item">
+              <router-link
+                to="about"
+                active-class="active"
+                class="page-tab-link nav-link"
+                >About me</router-link
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -120,19 +125,50 @@ a:active {
   flex-direction: column;
 }
 
+.the-nav {
+  display: inline;
+}
+
 .nav-container {
-  position: relative;
+  position: absolute;
   display: block;
   z-index: 666;
-  max-width: 16.66vw;
-  height: 16.66vw;
-  max-width: 320px;
+  min-width: 288px;
+  min-height: 288px;
+  width: 320px;
   height: 320px;
   background: url("../assets/Background.svg");
   background-size: cover;
   filter: drop-shadow(4px 4px 4px #3c3942);
   @media (max-width: 1300px) {
     display: none;
+  }
+}
+
+.nav-toggle {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 6665;
+  display: none;
+
+  &:checked ~ .nav-container {
+    display: block;
+  }
+
+  &:checked ~ .nav-toggle-circle {
+    box-shadow: inset 2px 2px 5px var(--shadow),
+      inset -3px -3px 7px var(--shadow-light) !important;
+  }
+
+  &-circle {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 48px;
+    height: 48px;
+    z-index: 6666;
+    background: var(--primary);
   }
 }
 
