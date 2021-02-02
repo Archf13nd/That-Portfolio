@@ -1,19 +1,19 @@
 <template>
   <div id="app">
     <the-nav></the-nav>
-    <the-pill />
+    <!-- <the-pill /> -->
     <router-view />
   </div>
 </template>
 
 <script>
 import theNav from "./components/Nav.vue";
-import thePill from "./components/DarkMode.vue";
+// import thePill from "./components/DarkMode.vue";
 
 export default {
   components: {
     theNav,
-    thePill
+    // thePill
   }
 };
 </script>
