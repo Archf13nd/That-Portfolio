@@ -1,57 +1,53 @@
 <template>
-  <div class="container">
-    <h1>Projects</h1>
+  <div class="window-container">
+    <div class="side"></div>
     <div class="project-list">
-      <a href="https://thirsty-boyd-875f5e.netlify.app/">
-        <div class="project-container">
-          <div class="details">
-            <h3>A Message App</h3>
-            <p>Progress: Ongoing</p>
-          </div>
-          <div class="screenshot">
-          </div>
-        </div>
-      </a>
-      </div>
+      <project-card
+      v-for="project in projects"
+      :key="project.name"
+      :title="project.title"
+      :description="project.description"
+      :tech="project.tech"
+      :progress="project.progress"
+      :url="project.url"
+
+      >
+      </project-card>
     </div>
+    <div class="side"></div>
+  </div>
 </template>
 
+<script>
+import ProjectCard from './ProjectCard.vue'
+export default {
+  components: {
+    ProjectCard
+  },
+  computed: {
+    projects() {
+      return this.$store.getters['getProjects']
+    }
+  }
+}
+</script>
+
 <style scoped>
-.container {
+.window-container {
  height: 100vh;
  width: 100vw;
  display: flex;
- flex-direction: column;
- align-items: center;
 }
 
 .project-list {
-margin-top: 200px;
-width: 400px;
-height: 200px;
+  flex: 3.3 1 400px;
+  margin-top: 150px;
 }
 
-.project-container {
-  height: 240px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.side {
+  flex: 6.6 2 100px
 }
 
-.details {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-
-}
-  
-.screenshot {
-  width: 400px;
-  height: 200px;
-  background: url("../assets/message-app.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
 
 h1 {
   font-size: 3vw;

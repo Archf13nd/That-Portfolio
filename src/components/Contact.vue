@@ -169,14 +169,13 @@ input:-webkit-autofill:active {
   left: 0;
   width: 100vw;
   height: 100vh;
+  padding: 20px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .the-container {
-  position: absolute;
-  top: 0;
   margin: 5% 0 5% 0;
   background: var(--primary);
   border-radius: 14px;
@@ -185,13 +184,13 @@ input:-webkit-autofill:active {
   min-width: 300px;
   height: 100%;
   max-height: 650px;
-  min-height: 600px;
+  min-height: 650px;
   color: #97e7a4;
   justify-content: space-between;
   flex-basis: auto;
 
   @media screen and (max-width: 600px) {
-    margin-top: 20%;
+    margin-top: 230px;
   }
 }
 </style>
