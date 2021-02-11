@@ -3,14 +3,13 @@
     <div class="side"></div>
     <div class="project-list">
       <project-card
-      v-for="project in projects"
-      :key="project.name"
-      :title="project.title"
-      :description="project.description"
-      :tech="project.tech"
-      :progress="project.progress"
-      :url="project.url"
-
+        v-for="project in projects"
+        :key="project.name"
+        :title="project.title"
+        :description="project.description"
+        :tech="project.tech"
+        :progress="project.progress"
+        :url="project.url"
       >
       </project-card>
     </div>
@@ -19,24 +18,24 @@
 </template>
 
 <script>
-import ProjectCard from './ProjectCard.vue'
+import ProjectCard from "./ProjectCard.vue";
 export default {
   components: {
     ProjectCard
   },
   computed: {
     projects() {
-      return this.$store.getters['getProjects']
+      return this.$store.getters["getProjects"];
     }
   }
-}
+};
 </script>
 
 <style scoped>
 .window-container {
- height: 100vh;
- width: 100vw;
- display: flex;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
 }
 
 .project-list {
@@ -45,17 +44,17 @@ export default {
 }
 
 .side {
-  flex: 6.6 2 100px
+  flex: 6.6 2 100px;
 }
-
 
 h1 {
   font-size: 3vw;
   color: #55de7b;
 }
-h3, p {
+h3,
+p {
   margin: 0;
-  color:  #55de7b
+  color: #55de7b;
 }
 ul {
   list-style: none;

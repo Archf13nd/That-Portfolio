@@ -7,11 +7,12 @@ export default new Vuex.Store({
   state: {
     projects: [
       {
-        title: 'Message App',
-        description: 'A working message app complete with sign in and authentication',
-        tech: ['Vue', 'Vuex', 'Vue-router'],
-        progress: 'Ongoing',
-        url: 'https://conclavemessaging.netlify.app/home'
+        title: "Message App",
+        description:
+          "A working message app complete with sign in and authentication",
+        tech: ["Vue", "Vuex", "Vue-router"],
+        progress: "Ongoing",
+        url: "https://conclavemessaging.netlify.app/home"
       }
     ]
   },
@@ -19,7 +20,7 @@ export default new Vuex.Store({
   actions: {},
   getters: {
     getProjects(state) {
-      return state.projects
+      return state.projects;
     }
   },
   modules: {}

@@ -11,7 +11,7 @@
         </ul>
       </div>
       <div class="skill">
-        <img class='css3' src="../assets/CSS3.svg" alt="CSS3 Logo" />
+        <img class="css3" src="../assets/CSS3.svg" alt="CSS3 Logo" />
         <ul>
           <li>Responsive Design</li>
           <li>Maintainable</li>
@@ -66,10 +66,10 @@ img {
 }
 
 .css3 {
-    height: 180px;
-    & ~ ul {
-        margin: 20px 0 0 60px;
-    }
+  height: 180px;
+  & ~ ul {
+    margin: 20px 0 0 60px;
+  }
 }
 
 .screen-container {
@@ -104,9 +104,8 @@ img {
   justify-content: center;
   color: #54d169;
 
-& > ul {
+  & > ul {
     margin-left: 24px;
-}
-
+  }
 }
 </style>

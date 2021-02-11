@@ -12,7 +12,7 @@ import theNav from "./components/Nav.vue";
 
 export default {
   components: {
-    theNav,
+    theNav
     // thePill
   }
 };
