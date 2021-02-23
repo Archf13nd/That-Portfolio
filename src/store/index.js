@@ -7,12 +7,12 @@ export default new Vuex.Store({
   state: {
     projects: [
       {
-        title: "Message App",
+        title: "Conclave Message App",
         description:
           "A working message app complete with sign in and authentication",
         tech: ["Vue", "Vuex", "Vue-router"],
-        progress: "Ongoing",
-        url: "https://conclavemessaging.netlify.app/home"
+        progress: "Finished",
+        url: "https://conclave-messaging.netlify.app/home"
       }
     ]
   },
