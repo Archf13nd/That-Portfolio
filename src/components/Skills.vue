@@ -90,7 +90,6 @@ img {
 
   display: grid;
   grid-template: 1fr / repeat(auto-fill, minmax(300px, 1fr));
-  // grid-template: 300px / 700px;
   align-items: center;
   justify-content: center;
   // margin-top: 5%;
