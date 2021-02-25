@@ -1,110 +1,147 @@
 <template>
-  <div class="screen-container">
-    <div class="the-container">
-      <div class="skill">
-        <img src="../assets/HTML5.svg" alt="HTML5 logo" />
-        <ul>
-          <li>Performence</li>
-          <li>Semantics</li>
-          <li>Multimedia</li>
-          <li>SEO</li>
-        </ul>
-      </div>
-      <div class="skill">
-        <img class="css3" src="../assets/CSS3.svg" alt="CSS3 Logo" />
-        <ul>
-          <li>Responsive Design</li>
-          <li>Maintainable</li>
-          <li>Scalable</li>
-          <li>Flexbox and Grid</li>
-          <li>Sass</li>
-        </ul>
-      </div>
-      <div class="skill">
-        <img src="../assets/javascript.svg" alt="Javascript logo" />
-        <ul>
-          <li>Es6+</li>
-          <li>Optimized</li>
-          <li>Data stuctures</li>
-          <li>Algorithms</li>
-        </ul>
-      </div>
-      <div class="skill">
-        <img src="../assets/vuejs.svg" alt="Vue Logo" />
-        <ul>
-          <li>Vue 3</li>
-          <li>Vue CLI</li>
-          <li>Vuex</li>
-          <li>Vue Router / axios</li>
-          <li>Plugins</li>
-        </ul>
-      </div>
-      <div class="skill">
-        <img src="../assets/webpack.svg" alt="Webpack Logo" />
-        <ul>
-          <li>File Bundling</li>
-          <li>Further optimization</li>
-          <li>Minified code</li>
-          <li>Tailored configs</li>
-        </ul>
-      </div>
-      <div class="skill npm">
-        <img src="../assets/npm.svg" alt="NPM logo" />
-        <ul>
-          <li>Latest Tech</li>
-          <li>Faster workflow</li>
-          <li>I'm security conscious</li>
-        </ul>
+<div class="screen-container">
+  <div class="skill-container bg-primary shadow-soft">
+    <h1 class="title">Website</h1>
+    <div class="skill-header">
+      <div class="skill-badge vuejs shadow-soft"></div>
+      <div class="badge-container">
+        <div class="skill-badge javascript shadow-soft"></div>
+        <div class="skill-badge css3 shadow-soft"></div>
       </div>
     </div>
+    <div class="skill-boxes-grid">
+    <div class="skill-box bg-primary shadow-soft">
+        <h2 class="skill-box__header">Optimized</h2>
+        <div class="skill-box__content">
+          <div class="img"></div>
+          <p>Even with lots of images or files, users will receive content asap!</p>
+        </div>
+      </div>
+      <div class="skill-box bg-primary shadow-soft">
+        <h2 class="skill-box__header">Pixel Perfect</h2>
+        <div class="skill-box__content">
+          <div class="img"></div>
+          <p class="text">If you provide the design I will treat in with respect. I uphold myself to pixel perfect standards.</p>
+        </div>
+      </div>
+      <div class="skill-box bg-primary shadow-soft">
+        <h2 class="skill-box__header">Communication</h2>
+        <div class="skill-box__content">
+          <div class="img"></div>
+          <p>I will provide you with periodic updates and together we can steer the ship in the right direction </p>
+        </div>
+      </div>
+      <div class="skill-box bg-primary shadow-soft">
+        <h2 class="skill-box__header">SEO</h2>
+        <div class="skill-box__content">
+          <div class="img"></div>
+          <p>I’ll do everything in my power to give your site a great ranking which will bring you more visitors.</p>
+        </div>
+      </div>
+      
+    </div>
   </div>
+</div>
 </template>
 
 <style lang="scss" scoped>
-img {
-  max-width: 180px;
-}
 
-.css3 {
-  height: 180px;
-  & ~ ul {
-    margin: 20px 0 0 60px;
-  }
+.bg-primary {
+  background: var(--primary);
 }
 
 .screen-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 5% 3% 5% 3%;
-  width: 100vw;
   min-height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+.skill-container {
+  display: relative;
+  width: 110rem;
+  height: 55rem;
+  margin: 10rem 0 0 0;
+  color: var(--text-primary);
+  border-radius: 14px;
 }
 
-.the-container {
-  min-width: 400px;
-  width: 60%;
+.skill-header {
+  display: flex;
+  width: 100%;
+  margin-top: -8rem;
+  justify-content: space-between;
+}
 
+.skill-badge {
+  display: inline-block;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 14px;
+  margin:0 0 0 3rem;
+}
+
+.badge-container {
+  margin-right: 3rem;
+}
+
+.title {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 8rem;
+  font-family: Righteous, sans-serif;
+}
+
+.skill-boxes-grid {
+  height: 80%;
+  width: 100%;
+  margin: 0 auto;
   display: grid;
-  grid-template: 1fr / repeat(auto-fill, minmax(300px, 1fr));
+  justify-items: center;
   align-items: center;
-  justify-content: center;
-  // margin-top: 5%;
-  // background: #000;
+  grid-template:  repeat(2, 1fr) / 1fr 1fr;
 }
 
-.skill {
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #54d169;
+.skill-box {
+  height: 16rem;
+  width: 40rem;
+  border-radius: 14px;
 
-  & > ul {
-    margin-left: 24px;
-  }
+&__header {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 4rem;
+  font-family: Righteous, sans-serif;
+
 }
+
+
+&__content {
+  margin: 0rem 1rem 0 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+}
+
+p {
+  margin-left: 1rem;
+  width: 90%;
+  padding: 1rem;
+  font-size: 14px;
+  color: rgb(13, 255, 0);
+  font-weight: bold;
+  filter: brightness(10%);
+}
+
+
+.img {
+  width: 5rem;
+  height: 5rem;
+  background: #000;
+}
+
+
+
+
 </style>

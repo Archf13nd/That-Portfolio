@@ -19,6 +19,9 @@ export default {
 </script>
 
 <style lang="scss">
+
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
 :root {
   --primary-color-base: #000000;
   --secondary-color-base: #000000;
@@ -34,6 +37,7 @@ body,
 
 html {
   box-sizing: border-box;
+  font-size: 50%;
 }
 
 #app {
