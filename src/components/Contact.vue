@@ -149,6 +149,8 @@ label {
 
 input {
   border: none;
+  height: 5rem;
+  font-size: 2rem;
 }
 
 input:-webkit-autofill,
@@ -161,6 +163,7 @@ input:-webkit-autofill:active {
 .btn {
   position: relative;
   bottom: 0;
+
 }
 
 .screen-container {

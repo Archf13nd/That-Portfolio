@@ -91,6 +91,7 @@ span {
   padding: 5px;
   color: #55de7b;
   margin-left: 10px;
+  font-size: 2rem;
 }
 
 img {
@@ -103,7 +104,13 @@ img {
 h2 {
   display: inline-block;
   width: fit-content;
+  font-size: 4rem;
 }
+
+p {
+  font-size: 2rem;
+}
+
 
 .screenshot {
   background: #000;
